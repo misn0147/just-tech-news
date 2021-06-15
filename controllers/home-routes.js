@@ -39,14 +39,9 @@ router.get('/', (req, res) => {
         .catch(err => {
         console.log(err);
         res.status(500).json(err);
-<<<<<<< HEAD
-        });
-});
-=======
     });
 });
 
->>>>>>> develop
 
 // get single post
 router.get('/post/:id', (req, res) => {
@@ -55,19 +50,11 @@ router.get('/post/:id', (req, res) => {
         id: req.params.id
         },
         attributes: [
-<<<<<<< HEAD
-        'id',
-        'post_url',
-        'title',
-        'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-=======
             'id', 
             'post_url', 
             'title', 
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
->>>>>>> develop
         ],
         include: [
         {
