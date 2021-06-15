@@ -42,7 +42,6 @@ router.get('/', (req, res) => {
     });
 });
 
-
 // get single post
 router.get('/post/:id', (req, res) => {
     Post.findOne({
@@ -82,7 +81,7 @@ router.get('/post/:id', (req, res) => {
         res.render('single-post', {
             post,
             loggedIn: req.session.loggedIn
-        });
+            });
         })
         .catch(err => {
         console.log(err);
@@ -95,8 +94,8 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
+
     res.render('login');
 });
-
 
 module.exports = router;
